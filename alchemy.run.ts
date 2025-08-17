@@ -9,7 +9,7 @@ const app = await alchemy("my-alchemy-app", {
   stateStore: (scope) => new CloudflareStateStore(scope),
 });
 
-export const worker = await Vite("website", {
+export const worker = await Vite("my-alchemy-app", {
   entrypoint: "worker/index.ts",
   version: app.stage === "prod" ? undefined : app.stage,
 });
